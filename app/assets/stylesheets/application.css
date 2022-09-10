@@ -14,7 +14,7 @@
  *= require_self
  */
 
- :root {
+:root {
   --main-bg-color: #3778c2;
   --second-bg-color: #5fb523;
   --text-color-light: #f1f1f1;
@@ -74,7 +74,7 @@ a:hover {
 }
 
 .splash {
-  padding: 20px 4;
+  padding: 20px 4px;
   height: 80vh;
   display: flex;
   flex-direction: column;
