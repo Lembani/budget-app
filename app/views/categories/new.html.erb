@@ -1,0 +1,15 @@
+<%= render 'category_nav' %>
+<div class="container">
+    <div class="separation"></div>
+    <h5 class="text-center text-muted mb-2">Add Category</h5>
+    <div class="category_form">
+        <%= form_with model:[current_user, current_user.categories.build] , local: true do |form|%>
+            <%= form.text_field :name, required: true, placeholder:"Category name" %>
+            <div class="d-flex justify-content-evenly">
+            <%= label_tag "Icon " %>
+            <%= form.file_field :icon, required: true, placeholder:"Category icon" %>
+            </div>
+            <%= form.submit class:"btn btn-sm btn-success" %>
+        <% end %>
+    </div>
+</div>
