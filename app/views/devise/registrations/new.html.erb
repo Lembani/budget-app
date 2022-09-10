@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <% if user_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="bg-dark p-4">
+        <h4 class="text-white">Hi </h4>
+        <span class="text-muted"> <%= current_user.name %></span>
+      </div>
+    </div>
+  <% else %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="bg-ligth p-4">
+        <h4 class="text-dark">Personal Stash</h4>
+        <span class="text-muted">Here to help you grow!</span>
+      </div>
+    </div>
+  <% end %>
+  <nav class="navbar navbar-dark bg-blue p-2">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <h3 class="text-center text-white">Register</h3>
+    <%= link_to "Sign In", user_session_path, class:"text-light" %>
+  </nav>
+</div>
+<div class="devise-form">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= f.text_field :name, required: true, autofocus: true, autocomplete: "name", placeholder: "Your name" %>
+    </div>
+    <div class="field">
+      <%= f.email_field :email, required: true, autofocus: true, autocomplete: "email", placeholder: "Your email" %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password, required: true, autocomplete: "new-password", placeholder: "Your password" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password" %>
+    </div>
+
+    <div class="actions mx-auto mt-2">
+      <%= f.submit "Sign Up" %>
+    </div>
+  <% end %>
+</div>
