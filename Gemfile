@@ -27,8 +27,8 @@ gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
-gem 'devise'
 gem 'cancancan'
+gem 'devise'
 
 gem 'carrierwave'
 gem 'image_processing', '~> 1.2'
@@ -57,9 +57,8 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug'
   gem 'database_cleaner'
-  gem 'capybara'
+  gem 'debug'
   gem 'rspec-rails'
 end
 

@@ -32,8 +32,5 @@ RSpec.describe 'categories/index', type: :view do
     find('input[name="commit"]').click
     expect(page).to have_content('TEST CATEGORY')
     expect(page).to have_button('Logout')
-    
-
   end
-
 end
