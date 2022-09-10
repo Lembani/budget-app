@@ -30,6 +30,10 @@ gem 'jbuilder'
 gem 'devise'
 gem 'cancancan'
 
+gem 'carrierwave'
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -55,6 +59,8 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
+  gem 'capybara'
+  gem 'rspec-rails'
 end
 
 group :development do
