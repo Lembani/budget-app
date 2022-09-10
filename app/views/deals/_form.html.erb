@@ -1,0 +1,5 @@
+<%= form_with model:[current_user, @category, @category.deals.build] , local: true do |form|%>
+    <%= form.text_field :name, placeholder:"Transaction name", class:"form-control"  %>
+    <%= form.number_field :amount, placeholder:"Transaction amount", class:"form-control"  %>
+    <%= form.submit class:"btn btn-primary btn-sm" %>
+<% end %>
