@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <% if user_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="bg-ligth p-4">
+        <h4 class="text-dark">Hi <%= current_user.name %></h4>
+      </div>
+    </div>
+  <% else %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="bg-light p-4">
+        <h4 class="text-dark">Personal Stash</h4>
+        <span class="text-muted">Here to help you grow!</span>
+      </div>
+    </div>
+  <% end %>
+  <nav class="navbar navbar-dark bg-blue p-2">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <% if user_signed_in?%>
+      <%= button_to "LOGOUT", destroy_user_session_path, method: :post, class:"btn btn-bold" %>
+    <% end %>
+  </nav>
+</div>
+<main class="splash pt-5">
+    <div class="lead text-center mt-5">
+      <h1 class="h1">Personal Stash</h1>
+      <em class="lead text-indigo"><small>Here to help you grow!</small></em>
+    </div>
+      <% if user_signed_in?%>
+        <%= link_to "My transactions", user_categories_path(current_user), class:"btn btn-bold"%>
+      <%else%>
+        <div class="actions">
+          <%= link_to "LOG IN", new_user_session_path, class:"btn btn-bold"%>
+          <%= link_to "SIGN UP", new_user_registration_path, class:"btn btn-muted" %>
+        </div>
+      <% end %>
+</main>

@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <% if user_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="bg-ligth p-4">
+        <h4 class="text-dark">Hi <%= current_user.name %></h4>
+      </div>
+    </div>
+  <% else %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="bg-ligth p-4">
+        <h4 class="text-dark">Personal Stash</h4>
+        <span class="text-muted">Here to help you grow!</span>
+      </div>
+    </div>
+  <% end %>
+  <nav class="navbar navbar-dark bg-blue">
+    <%= button_to "Go Back", user_categories_path(current_user), method: :get, class:"btn btn-bold" %>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-bold" %>
+  </nav>
+</div>

@@ -1,0 +1,6 @@
+<%= form_for [current_user, @category], local: true do |form|%>
+    <%= form.text_field :icon, placeholder:"Category Icon"%>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.submit %>
+<% end %>
