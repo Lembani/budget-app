@@ -1,0 +1,8 @@
+<h1>New Transaction</h1>
+<%= form_with model:[current_user, @category, @category.deals.build] , local: true do |form|%>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+    <%= form.submit %>
+<% end %>
